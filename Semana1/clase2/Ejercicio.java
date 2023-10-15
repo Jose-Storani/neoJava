@@ -1,5 +1,5 @@
 package Semana1.clase2;
 
-public class Ejercicios {
+public class Ejercicio {
 
 }

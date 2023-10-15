@@ -43,7 +43,7 @@ public class Ejercicio {
 			}
 		contador = numeroInicio;
 		
-		System.out.println("UTILIZANDO BUCLE FOR, LOS NUMEROS PARES SON: ");
+		System.out.println("UTILIZANDO BUCLE FOR, LOS NUMEROS PARES A LA INVERSA SON: ");
 		for(int i = numeroFinal; i >= numeroInicio; i--) {
 			if(i %2 ==0) {
 				System.out.println(i);
@@ -52,6 +52,23 @@ public class Ejercicio {
 	
 		}
 		;
+		
+	public void resolverCaso2() {
+		//ingresos mayores o iguales a 489083
+		//3 o mas vehiculos con antiguedad menr a 5 años
+		// 3 o mas inmuebles
+		//tener embarcacion, aeronave de lujo o ser titular de activos societarios que demuestren capacidad economica plena
+		
+		System.out.println("Ingrese ingresos mensuales totales");
+		int ingresosMensuales = keyboardInput.nextInt();
+		System.out.println("Ingrese cantidad de vehiculos en posesion cuya antiguedad sea menor a 5 años");
+		int vehiculos = keyboardInput.nextInt();
+		System.out.println("Posee embaracion, aeronave o es titular de activos societarios? Escriba true para si o false para no");
+		boolean activos = keyboardInput.nextBoolean();
+		
+		if(ingresosMensuales >= 489083 || vehiculos >= 3 || activos == true) System.out.println("Pertenece a la clase de ingresos altos");
+		System.out.println("No pertenece a la clase de ingresos altos");
+	}
 		
 
 	public void mostrarPares(int numeroContador, int numeroFinal) {
@@ -75,7 +92,8 @@ public class Ejercicio {
 
 	public static void main(String[] args) {
 		Ejercicio ejercicio1 = new Ejercicio();
-		ejercicio1.resolverCaso1();
+		//ejercicio1.resolverCaso1();
+		ejercicio1.resolverCaso2();
 
 	}
 
