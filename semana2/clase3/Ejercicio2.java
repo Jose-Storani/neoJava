@@ -11,7 +11,6 @@ public class Ejercicio2 {
 			else {
 				textoCodificado += abecedario.charAt(numeroDesplazamiento - 1);
 			}
-			System.out.println(textoCodificado);
 			
 		}
 		return textoCodificado;
