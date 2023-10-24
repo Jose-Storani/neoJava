@@ -7,7 +7,7 @@ public class Ejercicio1 {
 			if(texto.charAt(i) == letra)contador++;
 			
 		}
-		System.out.print("La cantidad de \"" + letra + "\" en el texto: \"" + texto + "\" es de: " + contador);
+		System.out.println("La cantidad de \"" + letra + "\" en el texto: \"" + texto + "\" es de: " + contador);
 		
 	}
 	
