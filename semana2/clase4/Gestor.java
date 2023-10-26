@@ -8,7 +8,7 @@ public class Gestor {
 public static void main(String[] args) {
 	//Para utilizar este tipo de metodos y clases que son riesgosos, es necesario utilizar exepciones con el bloque try/catch
 	 // Especifica la ruta relativa del archivo
-    String rutaArchivo = "archivos\\listaDeberes.txt";
+    String rutaArchivo = "archivos\\unArchivo.txt";
 
     // Intenta abrir el archivo
     File archivo = new File(rutaArchivo);
