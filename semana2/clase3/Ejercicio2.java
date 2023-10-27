@@ -3,10 +3,10 @@ package semana2.clase3;
 import java.util.Random;
 
 public class Ejercicio2 {
-	Random random = new Random();
-	String abecedario = "abcdefghijklmnñopqrstuvwxyz";
+	static private Random random = new Random();
+	static private String abecedario = "abcdefghijklmnñopqrstuvwxyz";
 
-	public String codificar(String texto, int numeroDesplazamiento) {
+	public static String codificar(String texto, int numeroDesplazamiento) {
 		String textoLower = texto.toLowerCase().trim();
 		String textoCodificado = "";
 		for (int i = 0; i < textoLower.length(); i++) {
@@ -27,7 +27,7 @@ public class Ejercicio2 {
 
 	}
 
-	public String decodificar(String textoCodificado, int numeroDesplazamiento) 
+	public static String decodificar(String textoCodificado, int numeroDesplazamiento) 
 	{
 		String textoLimpio = textoCodificado.toLowerCase().trim();
 		String textoDecodificado = "";
@@ -50,9 +50,9 @@ public class Ejercicio2 {
 	}
 
 	public static void main(String[] args) {
-		Ejercicio2 ejercicio2 = new Ejercicio2();
-		System.out.println(ejercicio2.codificar("mensaje secreto", 1));
-		System.out.println(ejercicio2.decodificar("nfñtbkf1tfdsfup", 1));
+		
+		System.out.println(codificar("mensaje secreto", 1));
+		System.out.println(decodificar("nfñtbkf1tfdsfup", 1));
 		
 
 	}
