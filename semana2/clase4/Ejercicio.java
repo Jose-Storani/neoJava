@@ -2,8 +2,6 @@ package semana2.clase4;
 
 import java.util.Scanner;
 
-import semana2.clase3.Sumatoria;
-
 public class Ejercicio {
 	public static void main(String[] args) {
 //1-a		

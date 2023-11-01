@@ -38,9 +38,7 @@ public class EjercicioDecoderSelector {
 	}
 	
 	public static void main(String[] args) throws IOException {
-//		for(String argumentos: args) {
-//			System.out.println(argumentos);
-//		}
+//debera pasar por parametros en orden: codificar o decodificar, el valor del desplazamiento, archivo de entrada y archivo de salida		
 		coderOrDecoder(args[0], args[1], args[2], args[3]);
 		
 		

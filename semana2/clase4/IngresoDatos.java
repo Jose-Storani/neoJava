@@ -15,5 +15,6 @@ public static void main(String[] args) {
 		resultado += Integer.parseInt(args[i]);
 	}
 	System.out.println(resultado);
+	keyboardInput.close();
 }
 }
