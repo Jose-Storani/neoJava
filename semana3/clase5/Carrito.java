@@ -42,7 +42,7 @@ public class Carrito {
 	public static void main(String[] args) throws IOException {
 		String archivoProductos = "src/semana3/clase5/productos.txt";
 		List<Producto> listadoProductos = new ArrayList<>();
-		
+		 
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(archivoProductos));
 			String linea;
