@@ -2,6 +2,7 @@ package semana3.clase6;
 
 public class Calculadora {
 	
+	
 	public static double sumar(double n, double m) {
 		return n + m;
 	}
