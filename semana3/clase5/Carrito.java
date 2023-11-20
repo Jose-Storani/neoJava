@@ -6,7 +6,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.text.DecimalFormat;
 import java.time.LocalDateTime;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
+
 
 //Se que el ejercicio pedia que fueran 3 productos "estaticos", pero me resulto mas escalable hacerlo con ArrayList para que al momento de crear un carrito, se pasen la cantidad de productos que se quiera y no quede atado a solo 3.
 public class Carrito {
@@ -47,6 +49,7 @@ public class Carrito {
 			BufferedReader br = new BufferedReader(new FileReader(archivoProductos));
 			String linea;
 			int contador = 0;
+		
 			//leo cada linea de producto dl archivo de texto
 			while((linea = br.readLine()) != null && contador <3) {
 				String[] partes = linea.split(" ");
