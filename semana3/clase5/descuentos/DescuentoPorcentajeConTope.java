@@ -10,8 +10,9 @@ public class DescuentoPorcentajeConTope extends Descuento {
 
 	//En caso de que el descuento a aplicar sea mayor al tope determinado, devuelvo el descuento maximo aplicado con tope.
 	@Override
-	public float valorFinal(float valorInicial) {
-		// TODO Auto-generated method stub
+	public float valorFinal(float valorInicial) throws ExceptionDiscount {
+		if(valorInicial ==0) throw new ExceptionDiscount("No se puede aplicar descuento a un carrito de valor 0");
+		if(this.getValorDesc() < 0) throw new ExceptionDiscount("El valor del descuento no puede ser negativo");
 		if(this.getValorDesc() > tope)return  valorInicial - (valorInicial * tope);
 		return valorInicial - (valorInicial * this.getValorDesc());
 	}

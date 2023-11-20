@@ -13,6 +13,7 @@ import semana3.clase5.descuentos.Descuento;
 import semana3.clase5.descuentos.DescuentoFijo;
 import semana3.clase5.descuentos.DescuentoPorcentaje;
 import semana3.clase5.descuentos.DescuentoPorcentajeConTope;
+import semana3.clase5.descuentos.ExceptionDiscount;
 
 
 
@@ -36,14 +37,12 @@ public class Carrito {
 		
 	}
 	
-	public float determinarCostoTotal() {
+	public float determinarCostoTotal() throws ExceptionDiscount {
 		
 		float costoInicial = 0;
 		for(Producto producto: this.productos) {
 			costoInicial += producto.precio;
 		}
-		
-		
 		
 		if(this.descuentoFijo != 0) {
 			Descuento descuentoFijo = new DescuentoFijo(this.descuentoFijo);
@@ -66,8 +65,18 @@ public class Carrito {
 	
 	public float redondearCosto() {
 		DecimalFormat df = new DecimalFormat("0.00");
-		String numeroFormateado = df.format(determinarCostoTotal());
-		return Float.parseFloat(numeroFormateado);
+		String numeroFormateado;
+		try {
+			numeroFormateado = df.format(determinarCostoTotal());
+			return Float.parseFloat(numeroFormateado);
+			
+		} catch (ExceptionDiscount e) {
+			//Devuelvo 0 si el descuento no es aplicable o el valor total del carrito es 0
+			
+			e.printStackTrace();
+			return 0;
+		}
+		
 	}
 	@Override
 	public String toString(){
@@ -94,6 +103,7 @@ public class Carrito {
 			
 			Carrito carrito001 = new Carrito(new Persona("Martin", "Esmeralda", LocalDateTime.of(1991, 4,20,12,0)),listadoProductos,0,0.10f,0.05f);
 			System.out.println(carrito001);
+			
 			
 			
 		} catch (FileNotFoundException e) {

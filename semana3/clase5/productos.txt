@@ -1,3 +1,4 @@
 jabon 123 40.50
 esponja 124 10.59
 chocolates 125 100.31
+shampoo 126 200

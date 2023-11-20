@@ -16,11 +16,14 @@ import org.junit.jupiter.api.Test;
 
 class CarritoTest {
 	private Carrito carrito;
+	private Carrito carritoConErrorDescuento;
+	private Carrito carritoSinProductos;
 	
 	@BeforeEach
 	 void setupCarrito() {
 		String archivoProductos = "src/semana3/clase5/productos.txt";
 		List<Producto> listadoProductos = new ArrayList<>();
+		List<Producto> listadoProductosVacio = new ArrayList<>();
 
 		try {
 			BufferedReader br = new BufferedReader(new FileReader(archivoProductos));
@@ -36,20 +39,35 @@ class CarritoTest {
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.err.println(e.getMessage());
 		}
-        System.out.println("Ejecutando setup antes de cada prueba.");
+        System.out.println("Ejecutando setup antes de cada prueba."); 
         carrito = new Carrito(new Persona("Martin", "Esmeralda", LocalDateTime.of(1991, 4,20,12,0)),listadoProductos,0,0.10f,0.05f);
+        carritoConErrorDescuento = new Carrito(new Persona("Martin", "Esmeralda", LocalDateTime.of(1991, 4,20,12,0)),listadoProductos,0,-0.10f,0.05f);
+        carritoSinProductos = new Carrito(new Persona("Martin", "Esmeralda", LocalDateTime.of(1991, 4,20,12,0)),listadoProductosVacio,0,0,0.05f);
     }
 
 	@Test
-	void test1() {
-		assertEquals(carrito.redondearCosto(), 143,83f);
+	void testeoCostoTotal() {
+		
+		assertEquals(333.83f,carrito.redondearCosto() );
 	}
 	
 	@Test
-	void test2() {
-		 assertNotEquals(carrito.redondearCosto(), 143);
+	void testeoCostoTotal2() {
+		 assertNotEquals(143, carrito.redondearCosto());
 	}
+	
+	@Test
+	void testeoErrorMontoTotal() {
+		assertEquals(0,carritoConErrorDescuento.redondearCosto());
+	}
+	@Test
+	void testeoErrorEnDescuento() {
+		assertEquals(0,carritoConErrorDescuento.redondearCosto());
+	}
+	
+	
+	
 
 }
